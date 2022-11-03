@@ -14,12 +14,14 @@ echo                  '|      __________________________________________________
 echo                  '|                                                               |'
 echo                  '|_______________________________________________________________|'
 echo ''
-echo "Digite o Nome de Usuário do github :"
+echo "Type Your GitHub Username:"
+echo ''
 read user
 echo ''
-echo "Digite o e-mail vinculado à conta do github :"
-read mail
+echo "Type Your GitHub Mail:"
 echo ''
+read mail
+
 git config --global user.email "$mail"
 git config --global user.name "$user"
 
@@ -27,6 +29,6 @@ ssh-keygen -t rsa -b 4096 -C “$mail“
 
 echo "Aperte ENTER para tudo"
 eval "$(ssh-agent -s)" 
-
+echo ''
 cat ~/.ssh/id_rsa.pub
 start https://github.com/H3lc1ooS/SSH-KEYGEN
